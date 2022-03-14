@@ -314,7 +314,7 @@ class fun(commands.Cog):
     {"name":"apple","price":2000,"description": "apple: gives you more luck"},
     {"name":"bread","price":2500,"description": "bread: Makes someone lose money"},
     {"name":"beer","price":3000,"description": "Makes your cooldown time less but you suffer more if you drink to much"},
-    {"name":"Silicon","price":50000,"description": "daily reward increases by 15,000 (Daily reward not yet implemented so just save them)"}]
+    {"name":"Silicon","price":50000,"description": "daily reward increases by 15,000"}]
 
     async def buy_this(self,ctx,user,item_name,amount):
         item_name = item_name.lower()
