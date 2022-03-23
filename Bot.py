@@ -7,6 +7,11 @@ import datetime
 import asyncio
 from discord.ext import commands
 from dotenv import load_dotenv
+import pymongo
+from pymongo import MongoClient
+cluster = MongoClient("mongodb")
+db = cluster["discord"]
+collection = db["prefix"]
 #________________________________________________
 #File Configs
 load_dotenv()
@@ -24,13 +29,21 @@ async def load(ctx, exstension):
   client.load_extension(f'cogs.{exstension}')
 
 
+
+
 @bot.command()
-async def unload(ctx, exstension):
-  client.unload_extension(f'cogs.{exstension}')
+async def reload(ctx, extension):
+  if ctx.author.id != 786788350160797706: return
+  else:
+    client.reload_extension(f'cogs.{extension}')
+    await ctx.channel.send("Cog reloaded!")
 
 
     
 client.load_extension("cogs.fun")
 client.load_extension("cogs.events")
 client.load_extension("cogs.commands")
+client.load_extension("cogs.804864012184977438")
+client.load_extension("cogs.leave")
+client.load_extension("cogs.welcome")
 client.run(TOKEN)

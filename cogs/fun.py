@@ -55,7 +55,7 @@ class fun(commands.Cog):
             json.dump(users, f)
         
 
-    @commands.Cog.listener()
+    #@commands.Cog.listener()
     async def on_command_error(self, ctx, error):
         if isinstance(error, commands.CommandOnCooldown):
             msg = "**Still on cooldown!!!**, please try again in {:.2f}s".format(error.retry_after)
@@ -314,7 +314,7 @@ class fun(commands.Cog):
     {"name":"apple","price":2000,"description": "apple: gives you more luck"},
     {"name":"bread","price":2500,"description": "bread: Makes someone lose money"},
     {"name":"beer","price":3000,"description": "Makes your cooldown time less but you suffer more if you drink to much"},
-    {"name":"Silicon","price":50000,"description": "daily reward increases by 15,000"}]
+    {"name":"Silicon","price":50000,"description": "daily reward increases by 15,000 (Daily reward not yet implemented so just save them)"}]
 
     async def buy_this(self,ctx,user,item_name,amount):
         item_name = item_name.lower()

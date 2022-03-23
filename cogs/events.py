@@ -22,31 +22,10 @@ class Events(commands.Cog):
             )
     
             members = '\n - '.join([member.name for member in guild.members])
-            print(f'Guild Members:\n - {members}') 
-#Client Events
+            print(f'Guild Members:\n - {members}')
 
-    @commands.Cog.listener()
-    async def on_member_join(self, member: discord.member):
-        if member.guild.id == 804864012184977438 : return
-        channels = member.guild.channels
-        for channel in channels:
-            if ('welcome' in channel.name.lower()) or ('joins' in channel.name.lower()): #or ('testing' in channel.name)
-                 embed=discord.Embed(title=f"Welcome {member.name}", description=f"Thanks for joining {member.guild.name}!")
-                 embed.set_thumbnail(url=member.avatar_url)
-                 if isinstance(channel, discord.TextChannel):
-                    await channel.send(embed=embed)
 
-    @commands.Cog.listener()
-    async def on_member_remove(self, member: discord.member):
-        if member.guild.id == 804864012184977438 : return
-        channels = member.guild.channels
-        for channel in channels:
-            if ('leave' in channel.name.lower()) or ('goodbye' in channel.name.lower()): #or ('testing' in channel.name):
-                embed=discord.Embed(title=f"Goodbye, {member.name}", description=f"Bye {member.name} come again soon")
-                embed.set_thumbnail(url=member.avatar_url)
-                if isinstance(channel, discord.TextChannel):
-                    await channel.send(embed=embed)
 
 
 def setup(client):
-    client.add_cog(Events(client))      
+    client.add_cog(Events(client))
