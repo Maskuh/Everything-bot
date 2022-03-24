@@ -44,9 +44,9 @@ class CMS2(commands.Cog):
     async def Help(self, ctx, arg = None):
         
         if arg == None:
-            embed=discord.Embed(title='Help Page!', description=f"%Ping (To tell you if I am online or not) \n %Purge (To purge mass messages (Must have the manage message permission!!)) \n %Invite (Opens the invite page to invite me!) \n %Help (To open this page to tell you what commands I have) \n %Bal (Check you balence in the economy) \n %bag (Check your inventory to see what you have) \n %beg (Beg for money in the economy) \n %number(generates a random number for any of your needs) \n %Leave (Makes me leave the server(Note Only user <@786788350160797706> can as they are the Developer of the bot)) \n %shop (opens the shop in the economy) \n %buy (buys something from the shop) \n %Sell (sells an item from your bag) \n %use (command is not implemented yet and is in production sorry for the inconvience) \n %Slots (gamble your money) \n %wenable (Have a welcome message for each person who joins the server! (use %help welcome to get usage details)) \n %lenable (Have a leave message for each person who leaves the server! (use %help leave to get usage details))", color=0x206694)
+            embed=discord.Embed(title='Help Page!', description=f"%Ping (To tell you if I am online or not) \n %Purge (To purge mass messages (Must have the manage message permission!!)) \n %Invite (Opens the invite page to invite me!) \n %Help (To open this page to tell you what commands I have) \n %Bal (Check you balence in the economy) \n %bag (Check your inventory to see what you have) \n %beg (Beg for money in the economy) \n %number(generates a random number for any of your needs) \n %Leave (Makes me leave the server(Note Only user <@786788350160797706> can as they are the Developer of the bot)) \n %shop (opens the shop in the economy) \n %buy (buys something from the shop) \n %Sell (sells an item from your bag) \n %use (command is not implemented yet and is in production sorry for the inconvience) \n %Slots (gamble your money) \n %wenable (Have a welcome message for each person who joins the server! (use %help welcome to get usage details)) \n %lenable (Have a leave message for each person who leaves the server! (use %help leave to get usage details)) \n %Support (Gives you a link to join the support server!)", color=0x206694)
             await ctx.channel.send(embed=embed)
-            if ctx.guild.id == 804864012184977438:
+            if ctx.guild.id ==:
                 em=discord.Embed(title='Help Page Server specific!', description=f"&addrole (addroles to your self can only be used in <#939309364785872956> channel) \n &removerole (does the opposite of the addrole command and can only be used in the <#939309364785872956> channel)", color=0x206694)
                 await ctx.channel.send(embed=em)
         if arg == 'welcome':
@@ -69,6 +69,11 @@ class CMS2(commands.Cog):
             await ctx.guild.leave()
         else:
             await ctx.channel.send("You can't use this command only the owner of the bot can!")
+            
+    @commands.command(name='Support')
+    async def Support(self,ctx):
+        embed=discord.Embed(title='Support link', description="[Invite] (https://discord.gg/3setXsQJZu)
+        await ctx.channel.send(embed=embed)
 
 
 def setup(client):
