@@ -24,7 +24,7 @@ class CMS2(commands.Cog):
     @commands.has_permissions(manage_messages=True)
     async def Purge(self, ctx, limit: int = None):
             if not limit:
-                purge_failed = discord.Embed(title='Purge [%Purge]', description=f'Successfully Purged {limit} messages. \n Command executed by {ctx.author}.', color=discord.Colour.random())
+                purge_failed = discord.Embed(title='Purge [%Purge]', description=f'Failed to purge {limit} messages. \n Command executed by {ctx.author}.', color=discord.Colour.random())
                 purge_failed.set_footer(text=str(datetime.datetime.now()))
                 return await ctx.send(embed=purge_failed)
             await ctx.message.delete()
